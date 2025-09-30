@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 Clone this repository:
 
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
+git clone https://github.com/PyStorm07/Python-Begineer_projects.git
 
 
 Navigate to the project folder and run any script:
