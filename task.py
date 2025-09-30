@@ -1,53 +1,38 @@
 import random
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
-# ASCII art
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
+print("Welcome to the PyPassword Generator!")
+nr_letters = int(input("How many letters would you like in your password_list?\n"))
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
+# password_list = ""
 
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
+# for char in range(1, nr_letters + 1):
+#     password_list += random.choice(letters)
 
-options = [rock, paper, scissors]
-user_choice = int(input("What do you want to choose: 0 for rock, 1 for paper or 2 for scissors"))
+# for char in range(1, nr_symbols + 1):
+#     password_list += random.choice(symbols)
 
-if user_choice >= 3 and user_choice <= 0:
-    print("You chose an invalid number. You lose😕")
-else:
-    print("You choose:")
-    print(options[user_choice])
-# Computer choice
-computer_choice = (random.randint(0, 2))
-print("Computer Chose:")
-print(options[computer_choice])
+# for char in range(nr_numbers):
+#     password_list += random.choice(numbers)
 
-#Game logic
-if user_choice == computer_choice:
-    print("Its a Draw")
-elif (user_choice == 0 and computer_choice == 2) or \
-         (user_choice == 1 and computer_choice == 0) or \
-         (user_choice == 2 and computer_choice == 1):
-    print("You Win 🤑")
-else:
-    print("You Lose☹️")
+# print(password_list)
+password_list = []
 
+for char in range(1, nr_letters + 1):
+    password_list.append(random.choice(letters))
+
+for char in range(1, nr_symbols + 1):
+    password_list.append(random.choice(symbols))
+
+for char in range(nr_numbers):
+    password_list.append(random.choice(numbers))
+random.shuffle(password_list)
+password = ""
+for char in password_list:
+    password += char
+
+print(f"Your password is {password}")
